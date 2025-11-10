@@ -48,13 +48,13 @@
 
                     <!-- for if else für die Sterne -->
                     @for(count of [1,2,3,4,5]; track fruitlist){ <!-- track item funktioniert hier nicht -->
-                        @if(item.stars >= count) {
-                            <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                        } @else if(item.stars >= count - 0.5) {
-                            <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
-                        } @else {
-                            <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
-                        }
+                    @if(item.stars >= count) {
+                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                    } @else if(item.stars >= count - 0.5) {
+                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                    } @else {
+                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                    }
                     }
 
                     <!-- war fix Bewertung, bei allen gleich unabhängig von dem was hinterlegt ist.
@@ -64,8 +64,20 @@
                     <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
                     <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                     -->
+
+
+                    <!-- <p [ngStyle]="{color: 'red'}">({{item.stars}})</p> -->
+                    <!-- mit ngStyle kann es angepasst werden, hier Schriftfarbe rot -->
+
+                    <!-- <p [ngStyle]="{ color: fontColor }">({{item.stars}})</p> -->
+                    <!-- hier mit Variable, hier in "fruitlist.component.ts" definiert -->
+
+                    <!-- <p [ngStyle]="{ 'background-color': backgroundColor }">({{item.stars}})</p> -->
+                    <!-- style-atribute mit "-" funktioniert nur, wenn es in einzelne Klammern gesetzt wird -->
+
+                    <!-- Beispiel für kombiniert -->
+                    <p [ngStyle]="{ 'background-color': backgroundColor, color: fontColor }">({{item.stars}})</p>
                     
-                    <p>({{item.stars}})</p>
                 </div>
             </div>
             <div><b>Art:</b><br>{{item.genus}}</div>
