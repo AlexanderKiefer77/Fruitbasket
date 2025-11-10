@@ -76,8 +76,17 @@
                     <!-- style-atribute mit "-" funktioniert nur, wenn es in einzelne Klammern gesetzt wird -->
 
                     <!-- Beispiel für kombiniert -->
-                    <p [ngStyle]="{ 'background-color': backgroundColor, color: fontColor }">({{item.stars}})</p>
+                    <!-- <p [ngStyle]="{ 'background-color': backgroundColor, color: fontColor }">({{item.stars}})</p> -->
+
+                    <!-- Beispiel für [ngStyle] (+ternaryOperator) 
+                         wenn die Bewertung besser als 3, dann fontColorGood, wenn schlechter als 3, dann fontColorBad -->
+                    <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p>                  
                     
+                    <!-- Beispiele in Kombination, es können auch funktionen eingefügt werden -->
+                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': 'white' }">({{item.stars}})</p> -->
+                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': item.stars < 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
+
+
                 </div>
             </div>
             <div><b>Art:</b><br>{{item.genus}}</div>

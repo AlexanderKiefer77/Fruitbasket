@@ -12,9 +12,11 @@ export class FruitlistComponent {
   // Beispiel für erstellen einer Variablen
   // howItWorks = "fine"; // Variable, wird in "fruitlist.component.html" mit {{ }} eingebunden
 
-  fontColor = 'green'; // Variable für Schriftfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
-  backgroundColor = 'whitesmoke';
+  // fontColor = 'green'; // Variable für Schriftfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
+  // backgroundColor = 'whitesmoke'; // Variable für Hintergrundfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
 
+  fontColorGood = 'green';
+  fontColorBad = 'red';
 
   fruitlist = [
     {
