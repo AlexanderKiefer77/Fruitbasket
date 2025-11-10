@@ -31,7 +31,17 @@
     <app-singlefruit [fruitnumber]="index"></app-singlefruit> --> <!-- wurde hierhin verschoben -->
 
     @for(singlefruit of fruitlist; track singlefruit.name; let index = $index){
-    <app-singlefruit [fruit]="singlefruit"></app-singlefruit> <!-- wurde angepasst -->
+    <!--    <app-singlefruit [fruit]="singlefruit"></app-singlefruit> --> <!-- wurde angepasst -->
+
+    <!-- Beispiel für click-function -->
+    <!--    <app-singlefruit (click)="numLog(index)" [fruit]="singlefruit"></app-singlefruit> -->
+    
+    <!-- Beispiel für mouseover-function -->
+    <!-- <app-singlefruit (mouseover)="numLog(index)" [fruit]="singlefruit"></app-singlefruit> -->
+    
+    <!-- Beispiel für mouseenter-function -->
+    <app-singlefruit (mouseenter)="numLog(index)" [fruit]="singlefruit"></app-singlefruit>
+    
 
     <!-- die section wird verschoben in singlefruit.component.html -->
     <!-- <section class="singleFruitBox">

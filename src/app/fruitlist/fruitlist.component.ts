@@ -16,8 +16,8 @@ export class FruitlistComponent {
   // fontColor = 'green'; // Variable für Schriftfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
   // backgroundColor = 'whitesmoke'; // Variable für Hintergrundfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
 
-  // fontColorGood = 'green'; // als Beispiel für ngStyle
-  // fontColorBad = 'red'; // als Beispiel für ngStyle
+  fontColorGood = 'green'; // als Beispiel für ngStyle
+  fontColorBad = 'red'; // als Beispiel für ngStyle
 
   fruitlist = [
     // Apfel wurde als default Fall in "singlefruit.component.ts" zusätzlich kopiert
@@ -70,4 +70,11 @@ export class FruitlistComponent {
       reviews: [{ name: "Kevin W.", text: "Ganz gut in der Regel!" }, { name: "Oliver J.", text: "Absoluter Favorit beim Frühstück" }],
     },
   ]
-}
+
+
+  // Beispiel für click-function (onclick gibt es nicht) / in "fruitlist.component.html" eingefügt
+  numLog(index: number) {
+    console.log(index);
+  }
+  
+};
