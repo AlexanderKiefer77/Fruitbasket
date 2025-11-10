@@ -1,1 +1,27 @@
-<p>fruitlist works!</p>
+<!-- <p>fruitlist works {{ howItWorks }}!</p> -->
+<!-- mit {{ }} kann eine Variable eingefügt werden (in Angular) -->
+
+<!-- <p>fruitlist works {{ fruitlist[1].name }}!</p> -->
+<!-- Beispiel für Einbindung aus der fruitlist -->
+
+<!-- Beispiel für for (ähnlich for each) Schleife -->
+<!-- zeigt alle Namen der fruitlist an -->
+<!-- @for (item of fruitlist; track item.name) {
+    <p>{{ item.name }}</p>
+} -->
+
+<!-- zeigt alle Namen der fruitlist an + fügt vorne dran aber eine Index Nummer -->
+<!-- @for (item of fruitlist; track item.name; let index = $index) {
+    <p>{{ index }}: {{ item.name }}</p>
+} -->
+
+<!-- zeigt alle Namen der fruitlist an + fügt vorne dran aber einen boolean an, der nur beim letzten auf true gesetzt ist -->
+<!-- @for (item of fruitlist; track item.name; let last = $last) {
+    <p>{{ last }}: {{ item.name }}</p>
+} -->
+
+<!-- zeigt alle Namen der fruitlist an + fügt vorne dran aber einen boolean an, der nur beim ersten auf true gesetzt ist -->
+<!-- @for (item of fruitlist; track item.name; let first = $first) {
+    <p>{{ first }}: {{ item.name }}</p>
+} -->
+
