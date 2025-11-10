@@ -30,7 +30,8 @@
     <!-- @for(item of fruitlist; track item.name; let index = $index){
     <app-singlefruit [fruitnumber]="index"></app-singlefruit> --> <!-- wurde hierhin verschoben -->
 
-    @for(singlefruit of fruitlist; track singlefruit.name; let index = $index){
+    <!-- @for(singlefruit of fruitlist; track singlefruit.name; let index = $index){ --> <!-- wurde angepasst nach verschieben der "fruitlist" -->
+    @for(singlefruit of fruitlistdata.fruitlist; track singlefruit.name; let index = $index){
     <!--    <app-singlefruit [fruit]="singlefruit"></app-singlefruit> --> <!-- wurde angepasst -->
 
     <!-- Beispiel für click-function -->
