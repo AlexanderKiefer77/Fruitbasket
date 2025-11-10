@@ -20,7 +20,7 @@ export class FruitlistComponent {
   // fontColorBad = 'red'; // als Beispiel für ngStyle
 
   fruitlist = [
-    /** Apfel wurde als default Fall in "singlefruit.component.ts" verschoben
+    // Apfel wurde als default Fall in "singlefruit.component.ts" zusätzlich kopiert
     {
       name: "Apfel",
       img: "apple.png",
@@ -28,7 +28,7 @@ export class FruitlistComponent {
       genus: "Kernobstgewächsen innerhalb der Familie der Rosengewächse",
       stars: 2.3,
       reviews: [{ name: "Kevin W.", text: "ist lecker" }, { name: "Arne P.", text: "nicht so meins" }],
-    },*/
+    },
     {
       name: "Banane",
       img: "banana.png",
