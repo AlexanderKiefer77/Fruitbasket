@@ -27,30 +27,36 @@
 
 
 <div class="fruitlist_content">
-    @for(item of fruitlist; track item.name; let index = $index){
-        
-    <section class="singleFruitBox">
+    <!-- @for(item of fruitlist; track item.name; let index = $index){
+    <app-singlefruit [fruitnumber]="index"></app-singlefruit> --> <!-- wurde hierhin verschoben -->
+
+    @for(singlefruit of fruitlist; track singlefruit.name; let index = $index){
+    <app-singlefruit [fruit]="singlefruit"></app-singlefruit> <!-- wurde angepasst -->
+
+    <!-- die section wird verschoben in singlefruit.component.html -->
+    <!-- <section class="singleFruitBox">
         <div>
             <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
-
-            <!-- Beispiel für if Bedingung, hier werden nur die Früchte angezeigt, die weniger als 3 Bewertung Sterne haben -->
-            <!-- @if(item.stars < 3) {
+-->
+    <!-- Beispiel für if Bedingung, hier werden nur die Früchte angezeigt, die weniger als 3 Bewertung Sterne haben -->
+    <!-- @if(item.stars < 3) {
                     <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
                  } @else {
                     Bild fehlt
                  } -->
 
-        </div>
+    <!--       </div>
         <div>
-            <h2> <app-singlefruit [fruitnumber]="index"></app-singlefruit> {{item.name}}</h2>
-            <!-- <h2> <app-singlefruit [testNumber]="index"></app-singlefruit> {{item.name}}</h2> --> <!-- andere Möglichkeit, entspr. singlefruit.component.ts -->
-            <div>
+            <h2> <app-singlefruit [fruitnumber]="index"></app-singlefruit> {{item.name}}</h2> -->
+    <!-- <h2> <app-singlefruit [testNumber]="index"></app-singlefruit> {{item.name}}</h2> -->
+    <!-- andere Möglichkeit, entspr. singlefruit.component.ts -->
+    <!--            <div>
                 <p><b>Bewertung:</b></p>
                 <div>
-
-                    <!-- for if else für die Sterne -->
-                    @for(count of [1,2,3,4,5]; track fruitlist){ <!-- track item funktioniert hier nicht -->
-                    @if(item.stars >= count) {
+-->
+    <!-- for if else für die Sterne -->
+    <!--                    @for(count of [1,2,3,4,5]; track fruitlist){ --> <!-- track item funktioniert hier nicht -->
+    <!--                    @if(item.stars >= count) {
                     <img src="./assets/img/stars/star.svg" alt="" srcset="">
                     } @else if(item.stars >= count - 0.5) {
                     <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
@@ -58,8 +64,8 @@
                     <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                     }
                     }
-
-                    <!-- war fix Bewertung, bei allen gleich unabhängig von dem was hinterlegt ist.
+-->
+    <!-- war fix Bewertung, bei allen gleich unabhängig von dem was hinterlegt ist.
                         <img src="./assets/img/stars/star.svg" alt="" srcset="">
                         <img src="./assets/img/stars/star.svg" alt="" srcset="">
                         <img src="./assets/img/stars/star.svg" alt="" srcset="">
@@ -69,36 +75,36 @@
                     -->
 
 
-                    <!-- <p [ngStyle]="{color: 'red'}">({{item.stars}})</p> -->
-                    <!-- mit ngStyle kann es angepasst werden, hier Schriftfarbe rot -->
+    <!-- <p [ngStyle]="{color: 'red'}">({{item.stars}})</p> -->
+    <!-- mit ngStyle kann es angepasst werden, hier Schriftfarbe rot -->
 
-                    <!-- <p [ngStyle]="{ color: fontColor }">({{item.stars}})</p> -->
-                    <!-- hier mit Variable, hier in "fruitlist.component.ts" definiert -->
+    <!-- <p [ngStyle]="{ color: fontColor }">({{item.stars}})</p> -->
+    <!-- hier mit Variable, hier in "fruitlist.component.ts" definiert -->
 
-                    <!-- <p [ngStyle]="{ 'background-color': backgroundColor }">({{item.stars}})</p> -->
-                    <!-- style-atribute mit "-" funktioniert nur, wenn es in einzelne Klammern gesetzt wird -->
+    <!-- <p [ngStyle]="{ 'background-color': backgroundColor }">({{item.stars}})</p> -->
+    <!-- style-atribute mit "-" funktioniert nur, wenn es in einzelne Klammern gesetzt wird -->
 
-                    <!-- Beispiel für kombiniert -->
-                    <!-- <p [ngStyle]="{ 'background-color': backgroundColor, color: fontColor }">({{item.stars}})</p> -->
+    <!-- Beispiel für kombiniert -->
+    <!-- <p [ngStyle]="{ 'background-color': backgroundColor, color: fontColor }">({{item.stars}})</p> -->
 
-                    <!-- Beispiel für [ngStyle] (+ternaryOperator) 
+    <!-- Beispiel für [ngStyle] (+ternaryOperator) 
                          wenn die Bewertung besser als 3, dann fontColorGood, wenn schlechter als 3, dann fontColorBad -->
-                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
-                    
-                    <!-- Beispiele in Kombination, es können auch funktionen eingefügt werden -->
-                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': 'white' }">({{item.stars}})</p> -->
-                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': item.stars < 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
+    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
+
+    <!-- Beispiele in Kombination, es können auch funktionen eingefügt werden -->
+    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': 'white' }">({{item.stars}})</p> -->
+    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': item.stars < 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
 
 
-                    <!-- Beispiele für ngClass (in fruitlist.component.scss angelegt)-->
-                    <!-- Klasse direkt hinein geschrieben -->
-                    <!-- <p [ngClass]=" 'fontColorBad bgWhite' ">({{item.stars}})</p> -->
-                    <!-- andere Schreibweise wie oben drüber, aber weniger empfehlenswert
+    <!-- Beispiele für ngClass (in fruitlist.component.scss angelegt)-->
+    <!-- Klasse direkt hinein geschrieben -->
+    <!-- <p [ngClass]=" 'fontColorBad bgWhite' ">({{item.stars}})</p> -->
+    <!-- andere Schreibweise wie oben drüber, aber weniger empfehlenswert
                     <p [ngClass]=" ['fontColorBad bgWhite'] ">({{item.stars}})</p> -->
 
-                    <!-- als Object geschrieben 
+    <!-- als Object geschrieben 
                          item.stars resultiert aus der for schleife weiter oben -->
-                    <p [ngClass]=" {'fontColorBad' : item.stars < 3  , 'fontColorGood' : item.stars >= 3} ">({{item.stars}})</p>
+    <!--                    <p [ngClass]=" {'fontColorBad' : item.stars < 3  , 'fontColorGood' : item.stars >= 3} ">({{item.stars}})</p>
 
 
 
@@ -109,11 +115,13 @@
             <div><b>Beschreibung:</b><br>{{item.description}}</div>
             <div>
                 <div>
-                    <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
-                    @for(review of item.reviews; track review) {
+-->
+    <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
+    <!--                    @for(review of item.reviews; track review) {
                     <div><b>{{review.name}}:</b><br>{{review.text}}</div>
-                    } @empty { <!-- wenn noch kein Kommentar vorhanden -->
-                    no comments
+                    } @empty { 
+--> <!-- wenn noch kein Kommentar vorhanden -->
+    <!--                    no comments
                     }
 
                 </div>
@@ -121,6 +129,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
     }
 </div>
