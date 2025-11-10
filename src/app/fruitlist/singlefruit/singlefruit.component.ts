@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-singlefruit',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './singlefruit.component.scss'
 })
 export class SinglefruitComponent {
-
+  @Input() fruitnumber = 0;
+  // @Input('testNumber') fruitnumber = 0; // andere Möglichkeit, entspr. fruitlist.component.html 
 }
