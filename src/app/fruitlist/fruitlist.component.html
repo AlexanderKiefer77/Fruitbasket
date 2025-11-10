@@ -50,6 +50,12 @@
                 <div>
                     <div>
                             <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
+                            @for(review of item.reviews; track review) {
+                                <div><b>{{review.name}}:</b><br>{{review.text}}</div>
+                            } @empty { <!-- wenn noch kein Kommentar vorhanden -->
+                                no comments
+                            }
+
                     </div>
                     <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
                     </div>
