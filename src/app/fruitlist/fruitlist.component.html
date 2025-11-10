@@ -58,11 +58,12 @@
                     }
 
                     <!-- war fix Bewertung, bei allen gleich unabhängig von dem was hinterlegt ist.
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
-                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                        <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                        <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                        <p>({{item.stars}})</p>
                     -->
 
 
@@ -80,11 +81,24 @@
 
                     <!-- Beispiel für [ngStyle] (+ternaryOperator) 
                          wenn die Bewertung besser als 3, dann fontColorGood, wenn schlechter als 3, dann fontColorBad -->
-                    <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p>                  
+                    <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
                     
                     <!-- Beispiele in Kombination, es können auch funktionen eingefügt werden -->
                     <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': 'white' }">({{item.stars}})</p> -->
                     <!-- <p [ngStyle]="{ 'color': item.stars > 3 ? fontColorGood : fontColorBad , 'background-color': item.stars < 3 ? fontColorGood : fontColorBad }">({{item.stars}})</p> -->
+
+
+                    <!-- Beispiele für ngClass (in fruitlist.component.scss angelegt)-->
+                    <!-- Klasse direkt hinein geschrieben -->
+                    <!-- <p [ngClass]=" 'fontColorBad bgWhite' ">({{item.stars}})</p> -->
+                    <!-- andere Schreibweise wie oben drüber, aber weniger empfehlenswert
+                    <p [ngClass]=" ['fontColorBad bgWhite'] ">({{item.stars}})</p> -->
+
+                    <!-- als Object geschrieben 
+                         item.stars resultiert aus der for schleife weiter oben -->
+                    <p [ngClass]=" {'fontColorBad' : item.stars < 3  , 'fontColorGood' : item.stars >= 3} ">({{item.stars}})</p>
+
+
 
 
                 </div>

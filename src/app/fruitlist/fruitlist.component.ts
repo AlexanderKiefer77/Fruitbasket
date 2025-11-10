@@ -15,8 +15,8 @@ export class FruitlistComponent {
   // fontColor = 'green'; // Variable für Schriftfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
   // backgroundColor = 'whitesmoke'; // Variable für Hintergrundfarbe für Rating Bewertungen, wird in "fruitlist.component.html" eingebunden.
 
-  fontColorGood = 'green';
-  fontColorBad = 'red';
+  // fontColorGood = 'green'; // als Beispiel für ngStyle
+  // fontColorBad = 'red'; // als Beispiel für ngStyle
 
   fruitlist = [
     {
