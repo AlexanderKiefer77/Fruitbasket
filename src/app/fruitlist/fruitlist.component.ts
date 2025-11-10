@@ -72,9 +72,14 @@ export class FruitlistComponent {
   ]
 
 
-  // Beispiel für click-function (onclick gibt es nicht) / in "fruitlist.component.html" eingefügt
-  numLog(index: number) {
-    console.log(index);
+  // Beispiel für click-function (onclick gibt es nicht in Angular) / in "fruitlist.component.html" eingefügt
+  //numLog(index: number) {
+  //  console.log(index);
+  //}
+
+  // Beispile für Funktion zum ausloggen des Fruchtnamens.
+  namelog(name:string) {
+    console.log(name);    
   }
-  
+
 };
