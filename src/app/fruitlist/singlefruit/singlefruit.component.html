@@ -55,7 +55,8 @@
                 }
 
             </div>
-            <div><input type="text"><button><img (click)="emitName()" src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
+            <!-- "[(ngModel)]="inputData" " ist zum Einfügen von einem Kommentar -->
+            <div><input [(ngModel)]="inputData" type="text"><button><img (click)="sendInputData()" src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
             </div>
         </div>
     </div>

@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-singlefruit',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './singlefruit.component.html',
   styleUrl: './singlefruit.component.scss'
 })
@@ -20,13 +21,21 @@ export class SinglefruitComponent {
       reviews: [{ name: "Kevin W.", text: "ist lecker" }, { name: "Arne P.", text: "nicht so meins" }],
     };
 
+    inputData = ""; // Variable für Kommentar einzufügen
+
    @Output()fruitname = new EventEmitter<string>();
   // @Output('banaba')fruitname = new EventEmitter<string>(); // andere Schreibweise, muss entsprechend in "fruitlist.component.html" auch angepasst werden.
    
-  // mit dieser Funktion wird der Fruchname ausgelogt, wenn man auf den Sendebutton klickt. In Zusammenhang mit der Funktion in "fruitlist.component.ts"
-  emitName() { // funktion in "singlefruit.component.html" auf den Button zum abschicken der Nachricht eingefügt
-    this.fruitname.emit(this.fruit.name)
-  }
+  // mit dieser Funktion wird der Fruchtname ausgelogt, wenn man auf den Sendebutton klickt. In Zusammenhang mit der Funktion in "fruitlist.component.ts"
+  // emitName() { // funktion in "singlefruit.component.html" auf den Button zum abschicken des Kommentar eingefügt
+  //    this.fruitname.emit(this.fruit.name)
+  // }
 
+   sendInputData() { // funktion für Kommentar in Box hinzuzufügen
+     this.fruitname.emit(this.inputData);
+     this.inputData = ""; // leert das Input Feld
+   // console.log(this.inputData);
+   // this.inputData = "Servus"; // Damit könnte die Eingabe geändert werden.
+   }
 
 }

@@ -35,17 +35,22 @@
 
     <!-- Beispiel für click-function -->
     <!--    <app-singlefruit (click)="numLog(index)" [fruit]="singlefruit"></app-singlefruit> -->
-    
+
     <!-- Beispiel für mouseover-function -->
     <!-- <app-singlefruit (mouseover)="numLog(index)" [fruit]="singlefruit"></app-singlefruit> -->
-    
+
     <!-- Beispiel für mouseenter-function -->
     <!-- <app-singlefruit (mouseenter)="numLog(index)" [fruit]="singlefruit"></app-singlefruit> -->
 
-   <app-singlefruit (fruitname)="namelog($event)" [fruit]="singlefruit"></app-singlefruit>
-   <!-- andere Schreibweise dafür, muss entsprechend auch in "singlefruit.component.ts" angepasst werden -->
-   <!-- <app-singlefruit (banaba)="namelog($event)" [fruit]="singlefruit"></app-singlefruit> -->
-    
+    <!-- Beispiel für Namen der Frucht auszuloggen -->
+    <!-- <app-singlefruit (fruitname)="namelog($event)" [fruit]="singlefruit"></app-singlefruit> -->
+    <!-- andere Schreibweise dafür, muss entsprechend auch in "singlefruit.component.ts" angepasst werden -->
+    <!-- <app-singlefruit (banaba)="namelog($event)" [fruit]="singlefruit"></app-singlefruit> -->
+
+    <!-- für Kommentar einzufügen -->
+    <app-singlefruit (fruitname)="addComment($event, index)" [fruit]="singlefruit"></app-singlefruit>
+
+
 
     <!-- die section wird verschoben in singlefruit.component.html -->
     <!-- <section class="singleFruitBox">
